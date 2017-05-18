@@ -6,7 +6,7 @@ Not all tutorials will require all of these downloads, but ultimately to publish
 
 *This tutorial was written for Mac OS X Yosemite, version 10.10.5 as of writing.*
 
-##1. Xcode
+##Xcode
 
 | Link | Size |
 |:--|:--|
@@ -17,7 +17,7 @@ Needed to publish iOS apps to a simulator or device. Also includes some command 
 You will need a paid Apple Developer Account to publish to a device, but not a simulator.
 After installing, open up Xcode for the first time in order to agree to the license agreement and install additional components. After Xcode finishes installing the components, you can exit Xcode for now.
 
-##2. Xcode Command Line Tools
+##Xcode Command Line Tools
 
 In the Terminal app type:
 
@@ -25,7 +25,7 @@ In the Terminal app type:
 
 Allows us to build Xcode project files from the command line. After entering the command above, click the 'Install' button. You will then be prompted to agree to another license agreement.
 
-##3. Java Development Kit (JDK)
+##Java Development Kit (JDK)
 
 | Link | Size |
 |:--|:--|
@@ -43,7 +43,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.65-b01, mixed mode)
 ```
 
-##4. Android Studio SDK
+##Android Studio SDK
 
 | Link | Size |
 |:--|:--|
@@ -56,7 +56,7 @@ After downloading, open up Android Studio and follow the prompts for a Custom In
 
 ![SDK Components Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/sdk_components_setup.png "SDK Components Setup")
 
-##5. Android NDK
+##Android NDK
 
 | Link | Size |
 |:--|:--|
