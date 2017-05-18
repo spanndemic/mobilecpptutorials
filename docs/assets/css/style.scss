@@ -3,7 +3,12 @@
 
 @import "{{ site.theme }}";
 
+html {
+    font-size: 62.5%;
+}
+
 body {
+    font-size: 1.4rem;
     background-color: #e2e2e2;
 }
 
