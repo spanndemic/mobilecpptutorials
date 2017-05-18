@@ -3,6 +3,14 @@
 
 @import "{{ site.theme }}";
 
+body {
+    background-color: #e2e2e2;
+}
+
+.markdown-body {
+    background-color: white;
+}
+
 h1 {
     color: blue;
 }
