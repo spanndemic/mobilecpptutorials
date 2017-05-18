@@ -1,0 +1,13 @@
+ github: [metadata]
+ kramdown:
+   input: GFM
+   hard_wrap: false
+ gems:
+   - jekyll-coffeescript
+   - jekyll-paginate
+
+description: > # this means to ignore newlines until "baseurl:"
+  In this tutorial we will set up your local environment for developing cross-platform C++ apps on OS X Yosemite. There are several lengthy downloads and installs, so grab some coffee/beer/snacks.
+
+twitter_username: spanndemic
+github_username:  spanndemic
