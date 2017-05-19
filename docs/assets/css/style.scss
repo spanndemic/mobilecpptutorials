@@ -27,8 +27,12 @@ body {
         padding-left: 90px;
     }
 
-    h1, p, table, code {
+    h1, p, table, code, pre {
         padding: 0 90px;
+    }
+
+    code {
+        padding: 10px 90px;
     }
 
     &> *:last-child {
