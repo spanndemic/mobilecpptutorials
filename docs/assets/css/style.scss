@@ -26,8 +26,13 @@ body {
         padding-left: 90px;
     }
 
-    p {
+    h1, p, table, code {
         padding: 0 90px;
+    }
+
+    &:last-child {
+        margin-bottom: 60px;
+        paddin-bottom: 60px;
     }
 }
 
