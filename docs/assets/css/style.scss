@@ -30,7 +30,7 @@ body {
         padding: 0 90px;
     }
 
-    &*:last-child {
+    > *:last-child {
         margin-bottom: 60px !important;
         paddin-bottom: 60px;
     }
