@@ -18,7 +18,7 @@ Install Bundler:
 
 Clone this repository to your local workspace:
 
-`$ git clone git@github.com:spanndemic/mobilecpptutorials.git`
+`$ git clone git@github.com:spanndemic/mobilecpptutorials.com.git`
 
 Install Jekyll dependencies via Bundler:
 
