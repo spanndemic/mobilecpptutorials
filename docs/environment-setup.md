@@ -14,7 +14,8 @@ Not all tutorials will require all of these downloads, but ultimately to publish
 
 Needed to publish iOS apps to a simulator or device. Also includes some command line tools such as Git.
 
-You will need a paid Apple Developer Account to publish to a device, but not a simulator.
+*You will need a paid Apple Developer Account to publish to a device, but not a simulator.*
+
 After installing, open up Xcode for the first time in order to agree to the license agreement and install additional components. After Xcode finishes installing the components, you can exit Xcode for now.
 
 ## 2. Xcode Command Line Tools
