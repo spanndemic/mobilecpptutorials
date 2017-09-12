@@ -2,11 +2,11 @@
 
 [Environment Setup](environment-setup.html)
 
-[Your First Cross Platform Djinni App Part 1: C++](your-first-cross-platform-djinni-app-part-1-cplusplus.html)
+[Hello World App Part 1: C++](hello-world-app-part-1-cplusplus.html)
 
-[Your First Cross Platform Djinni App Part 2: iOS](your-first-cross-platform-djinni-app-part-2-ios.html)
+[Hello World App Part 2: iOS](hello-world-app-part-2-ios.html)
 
-[Your First Cross Platform Djinni App Part 3: Android](your-first-cross-platform-djinni-app-part-3-android.html)
+[Hello World App Part 3: Android](hello-world-app-part-3-android.html)
 
 [Todo App Using Djinni and SQLite Part 1: C++](todo-app-using-djinni-and-sqlite-part-1-cplusplus.html)
 
