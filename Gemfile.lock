@@ -194,7 +194,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-theme-primer
 
 BUNDLED WITH
-   1.14.6
+   1.15.3
