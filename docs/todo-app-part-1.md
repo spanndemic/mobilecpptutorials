@@ -403,7 +403,8 @@ Now, your xcode project browser should look like the following:
 
 Our last step is to modify main.cpp to actually test our code. Replace the contents of the file with the following:
 
-```main.cpp```
+`main.cpp`
+
 
 ```
 #include <iostream>
