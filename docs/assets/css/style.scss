@@ -4,65 +4,78 @@
 @import "{{ site.theme }}";
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.4rem;
-    background-color: #e2e2e2;
+  font-size: 1.4rem;
+  background-color: #e2e2e2;
 }
 
 .markdown-body {
-    background-color: white;
-    margin-bottom: 60px;
-    margin-top: 364px;
+  background-color: white;
+  margin-bottom: 60px;
+  margin-top: 364px;
 
-    h2 {
-        background-color: #0cd65e;
-        color: white;
-        border-top: 30px solid #e2e2e2;
-        line-height: 120px;
-        margin: 60px 0;
-        font-size: 34px;
-        font-size: 3.4rem;
-        padding-left: 90px;
-    }
+  h2 {
+    background-color: #0cd65e;
+    color: white;
+    border-top: 30px solid #e2e2e2;
+    line-height: 120px;
+    margin: 60px 0;
+    font-size: 34px;
+    font-size: 3.4rem;
+    padding-left: 90px;
+  }
 
-    h1, p, table, pre {
-        padding: 0 90px;
-    }
+  h1, p, table, pre {
+    padding: 0 90px;
+  }
 
-    code {
-        padding: 10px;
-    }
+  code {
+    padding: 10px;
+  }
 
-    &> *:last-child {
-        margin-bottom: 60px !important;
-        paddin-bottom: 60px;
-    }
+  &> *:last-child {
+    margin-bottom: 60px !important;
+    paddin-bottom: 60px;
+  }
 }
 
 h1 {
-    color: blue;
+  color: blue;
 }
 
 
-/* temp */
+/* temp for notes */
 em {
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    border-left-color: #1b809e;
-    display: block;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-left-color: #1b809e;
+  display: block;
+}
+
+.header__wrap {
+  height: 80px;
+  background-color: #4285f4;
+}
+
+.header__title {
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.8rem;
+  margin-left: 8px;
 }
 
 .post__hero-image {
-    width: 100%;
-    min-height: 426px;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    max-width: 100%;
+  width: 100%;
+  min-height: 426px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  max-width: 100%;
 }
