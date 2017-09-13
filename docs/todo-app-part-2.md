@@ -281,7 +281,7 @@ Add the following to our ViewController.h and ViewController.m files to implemen
 
 Now publish to the simulator or device, and you should get a working Todo App interface.
 
-![Todo iOS Simulator](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/tios_simulator.png "Todo iOS Simulator")
+![Todo iOS Simulator](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/ios_simulator.png "Todo iOS Simulator")
 
 Next, check out the Android tutorial where we go through the same process for an Android device/simulator.
 
