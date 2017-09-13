@@ -183,7 +183,7 @@ Now we’re going to implement the functionality we have laid out in the Djinni 
 
 `todo_list_impl.hpp`:
 
-```
+```cpp
 #pragma once
 
 #include "todo_list.hpp"
@@ -216,7 +216,7 @@ namespace todolist {
 
 `todo_list_impl.cpp`:
 
-```
+```cpp
 #include "todo_list_impl.hpp"
 #include <iostream>
 #include <string>
@@ -406,7 +406,7 @@ Our last step is to modify main.cpp to actually test our code. Replace the conte
 `main.cpp`
 
 
-```
+```cpp
 #include <iostream>
 #include "todo.hpp"
 
