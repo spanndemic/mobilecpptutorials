@@ -1,4 +1,6 @@
 
+# Syntax highlighting
+highlighter: pygments
 
 title: Mobile C++ Tutorials
 email: your-email@domain.com
