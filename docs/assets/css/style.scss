@@ -56,3 +56,12 @@ em {
     border-left-color: #1b809e;
     display: block;
 }
+
+.post__hero-image {
+    width: 100%;
+    min-height: 426px;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    max-width: 100%;
+}
