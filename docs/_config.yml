@@ -1,6 +1,6 @@
 
 # Syntax highlighting
-highlighter: pygments
+highlighter: rouge
 
 title: Mobile C++ Tutorials
 email: your-email@domain.com
