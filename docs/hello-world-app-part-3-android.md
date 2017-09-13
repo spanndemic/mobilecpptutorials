@@ -74,7 +74,7 @@ task clean(type: Delete) {
 }
 ```
 
-*The format of the following build.gradle file has been subject to change several times in recent months. If you get errors, double check what version of the plugin you are using, and check the experimental plugin page for syntax updates: [http://tools.android.com/tech-docs/new-build-system/gradle-experimental]*
+*The format of the following build.gradle file has been subject to change several times in recent months. If you get errors, double check what version of the plugin you are using, and check the experimental plugin page for syntax updates: [http://tools.android.com/tech-docs/new-build-system/gradle-experimental](http://tools.android.com/tech-docs/new-build-system/gradle-experimental)*
 
 
 `app/build.gradle`
@@ -260,11 +260,11 @@ Congratulations on completing the tutorial!
 ## Next Steps
 
 Continue on to the next tutorial, a Todo app using SQLite:
-[http://mobilecpptutorials.com/todo-app-using-djinni-and-sqlite-part-1-cplusplus/]
+[http://mobilecpptutorials.com/todo-app-using-djinni-and-sqlite-part-1-cplusplus/](http://mobilecpptutorials.com/todo-app-using-djinni-and-sqlite-part-1-cplusplus/)
 
 Check out the Djinni and MX3 repositories on GitHub:
-[https://github.com/dropbox/djinni]
-[https://github.com/libmx3/mx3]
+[https://github.com/dropbox/djinni](https://github.com/dropbox/djinni)
+[https://github.com/libmx3/mx3](https://github.com/libmx3/mx3)
 
 Watch the video from CPPCon 2014, where Djinni was announced:
-[https://www.youtube.com/watch?v=ZcBtF-JWJhM]
+[https://www.youtube.com/watch?v=ZcBtF-JWJhM](https://www.youtube.com/watch?v=ZcBtF-JWJhM)
