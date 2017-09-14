@@ -1,4 +1,11 @@
-# Cross-Platform C++ Dev Setup on OS X Yosemite
+---
+series: Hello World App
+title: Cross-Platform C++ Dev Setup on OS X Yosemite
+hero: hello-world-app
+image-credit: Toni Rodrigo
+image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
+date: August 27, 2015
+---
 
 In this tutorial we will set up your local environment for developing cross-platform C++ apps on OS X Yosemite. There are several lengthy downloads and installs, so grab some coffee/beer/snacks.
 

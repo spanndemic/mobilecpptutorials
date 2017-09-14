@@ -1,4 +1,11 @@
-# "Hello World" App: Part 3, Android
+---
+series: Hello World App
+title: Hello World App Part 3, Android
+hero: hello-world-app
+image-credit: Toni Rodrigo
+image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
+date: January 26, 2016
+---
 
 In the third and final part of this tutorial, we will setup our initial Android project, build a JNI library from our Djinni files, include the library in our Android project and finally publish to a device/simulator.
 

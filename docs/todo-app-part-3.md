@@ -1,4 +1,11 @@
-# Todo App using Djinni and SQLite: Part 3, Android
+---
+series: Todo App Using Djinni and SQLite
+title: Todo App Using Djinni and SQLite Part 3, Android
+hero: todo-app
+image-credit: Patrick Metzdorf
+image-credit-link: https://www.flickr.com/photos/batjko/13515152514/
+date: August 27, 2015
+---
 
 In this tutorial we will utilize our C++ back-end in Java, build an Android UI, and finally publish to an Android device or simulator.
 
