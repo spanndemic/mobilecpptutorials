@@ -22,7 +22,7 @@
   <div class="post__hero-image" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');"></div>
   <div class="container markdown-body">
     <ul>
-      {% for post in site.posts %}
+      {% for post in site.posts reversed %}
         <li>
           <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
