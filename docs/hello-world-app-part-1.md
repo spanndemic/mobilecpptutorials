@@ -166,15 +166,15 @@ Open Xcode, and either select ‘Create a new Xcode project’ from the splash s
 
 In the dialog that appears, select ‘Command Line Tool’ under OS X Application, and then click the Next button:
 
-![Xcode C++ Choose Template]({{ site.url }}/assets/images/hello-world-part-1-cplusplus/xcode_cpp_choose_template.png "Xcode C++ Choose Template")
+![Xcode C++ Choose Template]({{ site.url | prepend:site.baseurl }}/assets/images/hello-world-part-1-cplusplus/xcode_cpp_choose_template.png "Xcode C++ Choose Template")
 
 In the next dialog, fill out your app name and organization name, and be sure to select ‘C++’ for the language:
 
-![Xcode C++ Choose Options]({{ site.url }}/assets/images/hello-world-part-1-cplusplus/xcode_cpp_choose_options.png "Xcode C++ Choose Options")
+![Xcode C++ Choose Options]({{ site.url | prepend:site.baseurl}}/assets/images/hello-world-part-1-cplusplus/xcode_cpp_choose_options.png "Xcode C++ Choose Options")
 
 Finally, save the project in a new directory called ‘cpp_project’. We’ll also use this naming convention for other project directories later.
 
-![C++ Project Directory]({{ site.url }}/assets/images/hello-world-part-1-cplusplus/cpp_project_directory.png "C++ Project Directory")
+![C++ Project Directory]({{ site.url | prepend:site.baseurl}}/assets/images/hello-world-part-1-cplusplus/cpp_project_directory.png "C++ Project Directory")
 
 Now the new XCode project should open up, and if you run the project (**Product > Run**), you should see “Hello, World!” output to the console (You may need to enter your password to enable Development Mode if this is your first time in Xcode).
 
@@ -196,7 +196,7 @@ Also, be sure you check the box next to your deployment target so the files will
 
 Now your Xcode project should look similar to the following:
 
-![C++ Project]({{ site.url }}/assets/images/hello-world-part-1-cplusplus/cpp_project.png "C++ Project")
+![C++ Project]({{ site.url | prepend:site.baseurl}}/assets/images/hello-world-part-1-cplusplus/cpp_project.png "C++ Project")
 
 The last step is to replace the contents of our main.cpp with the following:
 
@@ -220,6 +220,6 @@ int main(int argc, const char * argv[]) {
 
 Now if you run the project (press the ‘play’ button, or select Product > Run) you should see ‘Hello World!’ in the console at the bottom right, only now including the time of day from our C++ code!
 
-![C++ Console]({{ site.url }}/assets/images/hello-world-part-1-cplusplus/cpp_console.png "C++ Console")
+![C++ Console]({{ site.url | prepend:site.baseurl}}/assets/images/hello-world-part-1-cplusplus/cpp_console.png "C++ Console")
 
 In the next tutorial, we’ll tackle generating project files with GYP, implementing our working C++ code in Objective-C, and finally publishing to an iOS device or simulator.
