@@ -103,7 +103,7 @@ First, let’s create a new ‘src’ folder in our project folder structure, wi
 
 `src/cpp/hello_world_impl.hpp:`
 
-```
+```cpp
 #pragma once
  
 #include "hello_world.hpp"
@@ -127,7 +127,7 @@ namespace helloworld {
 
 `src/cpp/hello_world_impl.cpp:`
 
-```
+```cpp
 #include "hello_world_impl.hpp"
 #include <string>
  
