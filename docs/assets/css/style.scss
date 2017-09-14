@@ -13,6 +13,10 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.container {
+  padding: 0 90px;
+}
+
 .markdown-body {
   background-color: white;
   margin-bottom: 60px;
@@ -26,11 +30,6 @@ body {
     margin: 60px 0;
     font-size: 34px;
     font-size: 3.4rem;
-    padding-left: 90px;
-  }
-
-  h1, p, table, pre {
-    padding: 0 90px;
   }
 
   code {
