@@ -7,7 +7,7 @@
   <header class="header__wrap">
     <div class="header">
       <a href="http://mobilecpptutorials.com">
-        <img class="header__logo" src="https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/mobile-cpp-logo-sm.png">
+        <img class="header__logo" src="{{ "/assets/images/mobile-cpp-logo-sm.png" | prepend:site.baseurl }}">
         <h1 class="header__title">Mobile C++ Tutorials</h1>
       </a>
       <nav class="header-nav">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </header>
-  <div class="post__hero-image" style="background-image: url('https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hero-images/hello-world.jpg');">
+  <div class="post__hero-image" style="background-image: url('{{ "/assets/hero-images/hello-world.jpg" | prepend:site.baseurl }}');">
   </div>
   <div class="container markdown-body">
     {{content}}
