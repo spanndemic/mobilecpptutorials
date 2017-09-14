@@ -1,29 +1,27 @@
 ---
 series: Hello World App
-title: Cross-Platform C++ Dev Setup on OS X Yosemite
+title: Cross-Platform C++ Dev Setup on macOS Sierra
 hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
-date: August 27, 2015
+redirect_from:
+  - /cross-platform-cplusplus-dev-setup-on-os-x-yosemite/
+date: September 14, 2017
 ---
 
-In this tutorial we will set up your local environment for developing cross-platform C++ apps on OS X Yosemite. There are several lengthy downloads and installs, so grab some coffee/beer/snacks.
+In this tutorial we will set up your local environment for developing cross-platform C++ apps on macOS Sierra (version 10.12.6 at the time of writing). There are several lengthy downloads, so grab some coffee/beer/snacks.
 
-Not all tutorials will require all of these downloads, but ultimately to publish an app built with C++ to both iOS and Android devices and simulators you will need all of the software listed below.
-
-*This tutorial was written for Mac OS X Yosemite, version 10.10.5 as of writing.*
+Not all tutorials will require all of these downloads, but ultimately to publish an app including C++ code on both iOS and Android devices/simulators you will need all of the software listed below.
 
 ## 1. Xcode
 
 | Link | Size |
 |:--|:--|
-| [Xcode on the OS X App Store](https://itunes.apple.com/us/app/xcode/id497799835) | 2.61 GB |
+| [Xcode on the Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835) | 4.54 GB |
 
-Needed to publish iOS apps to a simulator or device. Also includes some command line tools such as Git.
+Needed to publish iOS apps to a simulator or device. You will need a paid developer account to publish to a device.
 
-*You will need a paid Apple Developer Account to publish to a device, but not a simulator.*
-
-After installing, open up Xcode for the first time in order to agree to the license agreement and install additional components. After Xcode finishes installing the components, you can exit Xcode for now.
+After installing, open up Xcode for the first time and agree to the license agreement and install additional components. After Xcode finishes installing the components, you can exit Xcode for now.
 
 ## 2. Xcode Command Line Tools
 
