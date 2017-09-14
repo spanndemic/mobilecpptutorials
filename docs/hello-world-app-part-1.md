@@ -1,6 +1,6 @@
 ---
-series: Hello World" App
-title: Hello World" App: Part 1, C++
+series: "Hello World" App
+title: "Hello World" App: Part 1, C++
 hero: hello-world-app
 ---
 
