@@ -21,15 +21,11 @@
   </header>
   <div class="post__hero-image" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');"></div>
   <div class="container post-header">
-    <div class="container__inner">
-      <div class="post-header__series">{{ page.series }}</div>
-      <h1 class="post-header__title">{{ page.title }}</h1>
-    </div>
+    <div class="post-header__series">{{ page.series }}</div>
+    <h1 class="post-header__title">{{ page.title }}</h1>
   </div>
   <div class="container markdown-body">
-    <div class="container__inner">
-      {{content}}
-    </div>
+    {{content}}
   </div>
 </body>
 </html>
