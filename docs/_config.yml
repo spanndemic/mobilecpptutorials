@@ -8,6 +8,8 @@ description: Build Cross-Platform iOS and Android Apps using Dropbox's Djinni To
 theme: jekyll-theme-primer
 baseurl: /mobilecpptutorials.com
 
+permalink: /:title.html
+
 gems:
   - jekyll-redirect-from
 

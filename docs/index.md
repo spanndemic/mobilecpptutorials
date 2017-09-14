@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 # Mobile C++ Tutorials
 
 [Environment Setup](environment-setup.html)
