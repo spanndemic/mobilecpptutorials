@@ -1,8 +1,8 @@
 ---
+series: Hello World" App
+title: Hello World" App: Part 1, C++
 hero: hello-world-app
 ---
-
-# "Hello World" App: Part 1, C++
 
 In Part 1 of this tutorial, we will install 3rd party dependencies, render the Objective-C++ and JNI language bridge code with Djinni, write the C++ portion of our app, and finally run and test our app’s C++ code in Xcode.
 
