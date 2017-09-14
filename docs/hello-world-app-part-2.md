@@ -5,6 +5,8 @@ hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
 date: August 27, 2015
+redirect_from:
+  - /your-first-cross-platform-djinni-app-part-2-ios/
 ---
 
 In Part 2 of this tutorial, we will create an Xcode workspace for our platform-specific iOS app code, build out a simple UI for our app in Xcode, and finally publish the app on the iOS simulator or an iOS device.

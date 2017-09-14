@@ -5,6 +5,8 @@ hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
 date: August 27, 2015
+redirect_from:
+  - /your-first-cross-platform-djinni-app-part-1-cplusplus/
 ---
 
 In Part 1 of this tutorial, we will install 3rd party dependencies, render the Objective-C++ and JNI language bridge code with Djinni, write the C++ portion of our app, and finally run and test our app’s C++ code in Xcode.

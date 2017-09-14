@@ -4,9 +4,9 @@ title: Cross-Platform C++ Dev Setup on macOS Sierra
 hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
+date: September 14, 2017
 redirect_from:
   - /cross-platform-cplusplus-dev-setup-on-os-x-yosemite/
-date: September 14, 2017
 ---
 
 In this tutorial we will set up your local environment for developing cross-platform C++ apps on macOS Sierra (version 10.12.6 at the time of writing). There are several lengthy downloads, so grab some coffee/beer/snacks.

@@ -5,6 +5,8 @@ hero: todo-app
 image-credit: Patrick Metzdorf
 image-credit-link: https://www.flickr.com/photos/batjko/13515152514/
 date: August 27, 2015
+redirect_from:
+  - /todo-app-using-djinni-and-sqlite-part-1-cplusplus/
 ---
 
 In this series of tutorials, we will develop a simple cross-platform Todo List app that utilizes a SQLite database. In part 1, we will build out all of the app’s database functionality in C++.
