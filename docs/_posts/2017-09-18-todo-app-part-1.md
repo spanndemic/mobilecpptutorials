@@ -4,7 +4,6 @@ title: Todo App Using Djinni and SQLite Part 1, C++
 hero: todo-app
 image-credit: Patrick Metzdorf
 image-credit-link: https://www.flickr.com/photos/batjko/13515152514/
-date: August 27, 2015
 redirect_from:
   - /todo-app-using-djinni-and-sqlite-part-1-cplusplus/
 ---

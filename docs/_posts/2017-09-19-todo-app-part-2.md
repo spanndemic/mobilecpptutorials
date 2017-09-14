@@ -4,7 +4,6 @@ title: Todo App Using Djinni and SQLite Part 2, iOS
 hero: todo-app
 image-credit: Patrick Metzdorf
 image-credit-link: https://www.flickr.com/photos/batjko/13515152514/
-date: August 27, 2015
 redirect_from:
   - /your-first-cross-platform-djinni-app-part-1-cplusplus/
 ---

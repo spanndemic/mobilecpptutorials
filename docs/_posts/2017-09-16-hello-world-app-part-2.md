@@ -4,7 +4,6 @@ title: Hello World App Part 2, iOS
 hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
-date: August 27, 2015
 redirect_from:
   - /your-first-cross-platform-djinni-app-part-2-ios/
 ---

@@ -4,7 +4,6 @@ title: Cross-Platform C++ Dev Setup on macOS Sierra
 hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
-date: September 14, 2017
 redirect_from:
   - /cross-platform-cplusplus-dev-setup-on-os-x-yosemite/
 ---

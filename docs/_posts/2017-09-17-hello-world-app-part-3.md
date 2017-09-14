@@ -4,7 +4,6 @@ title: Hello World App Part 3, Android
 hero: hello-world-app
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
-date: January 26, 2016
 redirect_from:
   - /your-first-cross-platform-djinni-app-part-3-android/
 ---
