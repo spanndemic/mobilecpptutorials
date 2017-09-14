@@ -16,7 +16,6 @@ body {
 .markdown-body {
   background-color: white;
   margin-bottom: 60px;
-  margin-top: 364px;
   position: relative;
 
   h2 {
@@ -118,4 +117,25 @@ em {
   background-position: center center;
   position: absolute;
   max-width: 100%;
+}
+
+.post-header {
+  margin-top: 364px;
+  background-color: white;
+}
+
+.post-header__series {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #808080;
+}
+
+.post-header__title {
+  margin-top: 20px;
+  color: #4285f4;
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 52px;
 }
