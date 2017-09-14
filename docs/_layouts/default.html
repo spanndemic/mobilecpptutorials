@@ -19,7 +19,7 @@
       </div>
     </div>
   </header>
-  <div class="post__hero-image" style="background-image: url('{{ "/assets/images/hero-images/hello-world.jpg" | prepend:site.baseurl }}');">
+  <div class="post__hero-image" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');">
   </div>
   <div class="container markdown-body">
     {{content}}
