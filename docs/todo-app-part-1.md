@@ -1,7 +1,7 @@
 ---
+hero: todo-app
 series: Todo App Using Djinni and SQLite
 title: Todo App Using Djinni and SQLite: Part 1, C++
-hero: todo-app
 ---
 
 In this series of tutorials, we will develop a simple cross-platform Todo List app that utilizes a SQLite database. In part 1, we will build out all of the app’s database functionality in C++.
