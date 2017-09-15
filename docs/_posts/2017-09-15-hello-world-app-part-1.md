@@ -14,26 +14,16 @@ Djinni is a tool developed by Dropbox to assist with utilizing code built in C++
 
 *Be sure you have completed the Cross-Platform C++ Dev Setup on OS X Yosemite tutorial before beginning this one.*
 
-## Install 3rd Party Dependencies
+## Add Djinni to the project
 
-A Djinni project has at minimum a couple of dependencies, so we are going to utilize git submodules to handle this for us.
+We will utilize git submodules to add Djinni as a dependency to our project.
 
-Create your project directory, ‘cd’ into it and enter the following commands into Terminal to add Djinni and GYP as submodules:
+Create your project directory, ‘cd’ into it and enter the following commands into Terminal to add Djinni as a submodule:
 
 ```
 git init
 git submodule add https://github.com/dropbox/djinni.git deps/djinni
-git submodule add https://chromium.googlesource.com/external/gyp.git deps/gyp
 ```
-
-We actually need an older version of GYP to build Android files. To do this, we need to cd into deps/gyp and specify a commit:
-
-```
-cd deps/gyp
-git checkout -q 0bb67471bca068996e15b56738fa4824dfa19de0
-```
-
-*There is an open issue in the Djinni repository regarding the newer versions of GYP, read more about it on Github: Stop using gyp’s android generator.*
 
 ## Set up the Djinni File
 
@@ -54,36 +44,57 @@ The create() method will return an instance of our C++ object with the methods w
 
 This is the script that will run the djinni command, customized with the options that we require for our app. In keeping with the djinni example and the MX3 project, we’ll name this file `run_djinni.sh`:
 
-```
+```sh
 #! /usr/bin/env bash
- 
-base_dir=$(cd "`dirname "0"`" && pwd)
-cpp_out="$base_dir/generated-src/cpp"
-jni_out="$base_dir/generated-src/jni"
-objc_out="$base_dir/generated-src/objc"
-java_out="$base_dir/generated-src/java/com/mycompany/helloworld"
-java_package="com.mycompany.helloworld"
-namespace="helloworld"
-objc_prefix="HW"
+
+### Configuration
+
+# Djinni IDL file location
 djinni_file="helloworld.djinni"
- 
+
+# C++ namespace for generated src
+namespace="helloworld"
+
+# Objective-C class name prefix for generated src
+objc_prefix="HW"
+
+# Java package name for generated src
+java_package="com.mycompany.helloworld"
+
+
+### Script
+
+# get base directory
+base_dir=$(cd "`dirname "0"`" && pwd)
+
+# get java directory from package name
+java_dir=$(echo $java_package | tr . /)
+
+# output directories for generated src
+cpp_out="$base_dir/generated-src/cpp"
+objc_out="$base_dir/generated-src/objc"
+jni_out="$base_dir/generated-src/jni"
+java_out="$base_dir/generated-src/java/$java_dir"
+
+# clean generated src dirs
+rm -rf $cpp_out
+rm -rf $jni_out
+rm -rf $objc_out
+rm -rf $java_out 
+
+# execute the djinni command
 deps/djinni/src/run \
    --java-out $java_out \
    --java-package $java_package \
    --ident-java-field mFooBar \
-   \
    --cpp-out $cpp_out \
    --cpp-namespace $namespace \
-   \
    --jni-out $jni_out \
    --ident-jni-class NativeFooBar \
    --ident-jni-file NativeFooBar \
-   \
    --objc-out $objc_out \
    --objc-type-prefix $objc_prefix \
-   \
    --objcpp-out $objc_out \
-   \
    --idl $djinni_file
 ```
 

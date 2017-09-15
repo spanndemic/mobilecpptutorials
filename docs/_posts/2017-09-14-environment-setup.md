@@ -18,37 +18,31 @@ Not all tutorials will require all of these downloads, but ultimately to publish
 |:--|:--|
 | [Xcode on the Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835) | 4.54 GB |
 
-Needed to publish iOS apps to a simulator or device. You will need a paid developer account to publish to a device.
+Xcode is needed to publish iOS apps to a simulator or device. You will be able to publish to a simulator for free, but in order to publish to a device you will need a paid developer account.
 
-After installing, open up Xcode for the first time and agree to the license agreement and install additional components. After Xcode finishes installing the components, you can exit Xcode for now.
+After installing, open up Xcode for the first time and agree to the license agreement. Xcode will then install additional components we will need (like Git).
 
-## 2. Xcode Command Line Tools
-
-In the Terminal app type:
-
-`xcode-select --install`
-
-Allows us to build Xcode project files from the command line. After entering the command above, click the 'Install' button. You will then be prompted to agree to another license agreement.
-
-## 3. Java Development Kit (JDK)
+## 2. Java Development Kit (JDK)
 
 | Link | Size |
 |:--|:--|
 | [Java Development Kit (JDK) Download Page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) | 227 MB |
 
-We will need the Java JDK in order to run Android Studio and publish to Android devices and simulators. After downloading, verify that the JDK was installed correctly by running the following command in the Terminal app:
+We will need the Java JDK in order to run Djinni and Android Studio. On the page above, agree to the license agreement then download the version for 'Mac OS X'.
+
+After downloading, verify that the JDK was installed correctly by running the following command in the Terminal app:
 
 `java -version`
 
 You should see a response like the following:
 
 ```
-java version "1.8.0_65"
-Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
-Java HotSpot(TM) 64-Bit Server VM (build 25.65-b01, mixed mode)
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
 ```
 
-## 4. Android Studio SDK
+## 3. Android Studio SDK
 
 | Link | Size |
 |:--|:--|
@@ -61,7 +55,7 @@ After downloading, open up Android Studio and follow the prompts for a Custom In
 
 ![SDK Components Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/sdk_components_setup.png "SDK Components Setup")
 
-## 5. Android NDK
+## 4. Android NDK
 
 | Link | Size |
 |:--|:--|
