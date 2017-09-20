@@ -20,7 +20,7 @@ Now, we need to add our iOS App as a sub-project to the workspace. Select **File
 
 Set the Product Name to ‘HelloWorld’ and configure your Organization as you see fit. Be sure to pick Objective-C as the Language and be sure to add the Project to the ‘HelloWorld’ workspace:
 
-![Add to Workspace](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-2-ios/add_to_workspace.png "Add to Workspace")
+![Add to Workspace]({{ "/assets/images/hello-world-part-2/add_to_workspace.png" | prepend:site.baseurl }} "Add to Workspace")
 
 Publish to make sure the workspace + project is working, the simulator should open up with the default loading screen and then a blank white screen.
 
@@ -123,7 +123,7 @@ Add the two generated projects to the XCode Workspace… control-click on the gr
 
 Now, we need to add the libraries to our Build Phases. Click the ‘HelloWorld’ project, then select the HelloWorld target (you may need to expand the sidebar with the button in the top left). Then click the ‘Build Phases’ tab, then under Link Binaries With Libraries’, Add both `libhelloworld_objc.a` and `libdjinni_objc.a`:
 
-![Xcode Add Libraries](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-2-ios/xcode_add_libraries.png "Xcode Add Libraries")
+![Xcode Add Libraries]({{ "/assets/images/hello-world-part-2/xcode_add_libraries.png" | prepend:site.baseurl }} "Xcode Add Libraries")
 
 Now, we need to add header search paths for the libraries we added. Still in the ‘HelloWorld’ target, select the ‘Build Settings’ tab. Be sure ‘All’ is selected to the left instead of ‘Basic’. Now search for ‘User Header Search Paths’ and add the following:
 
@@ -140,7 +140,7 @@ You should now run the project and make sure there are no errors (will still be 
 
 Now we have all of the ingredients for our app inside the XCode workspace, and your project browser should look something like this:
 
-![Xcode Project Dir After Libraries](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-2-ios/xcode_project_dir_after_libraries.png "Xcode Project Dir After Libraries")
+![Xcode Project Dir After Libraries]({{ "/assets/images/hello-world-part-2/xcode_project_dir_after_libraries.png" | prepend:site.baseurl }} "Xcode Project Dir After Libraries")
 
 Only step left is to create a UI, and call our getHelloWorld function from inside our View Controller. Edit ViewController.m to be the following:
 
@@ -197,7 +197,7 @@ Only step left is to create a UI, and call our getHelloWorld function from insid
 
 Hopefully you can now publish the app (**Product > Run**) and will get a white-screen with a button labeled ‘Get Hello World!’. Pressing the button should add a line to the text view reading ‘Hello World!’ and the current time.
 
-![iOS Complete](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-2-ios/ios_complete.png "iOS Complete")
+![iOS Complete]({{ "/assets/images/hello-world-part-2/ios_complete.png" | prepend:site.baseurl }} "iOS Complete")
 
 In the next tutorial we’ll go through the same process for Android… creating a simple UI, connecting functionality and ultimately publishing to an Android device or simulator.
 

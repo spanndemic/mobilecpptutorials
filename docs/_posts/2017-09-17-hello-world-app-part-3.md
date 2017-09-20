@@ -25,7 +25,7 @@ Company Domain: mycompany.com
 
 Project Location: Create a new folder inside your project, here I’ve chosen ‘android_project’ to be consistent with our other Xcode project naming:
 
-![Android Studio New Project](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-3-android/AS_new_project.png "Android Studio New Project")
+![Android Studio New Project]({{ "/assets/images/hello-world-part-3/AS_new_project.png" | prepend:site.baseurl }} "Android Studio New Project")
 
 *Be sure to set the company domain to ‘mycompany.com’. This is utilized in your java package name which is used in other scripts in this tutorial.*
 
@@ -165,7 +165,7 @@ dependencies {
 
 Gradle will need to sync after editing these file, and afterward you should see a ‘jni’ folder in your project browser, as well as additional files in your java folder:
 
-![Android Studio After Gradle](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/hello-world-part-3-android/browser_after_gradle.png "Android Studio After Gradle")
+![Android Studio After Gradle]({{ "/assets/images/hello-world-part-3/browser_after_gradle.png" | prepend:site.baseurl }} "Android Studio After Gradle")
 
 ## Build the App
 
