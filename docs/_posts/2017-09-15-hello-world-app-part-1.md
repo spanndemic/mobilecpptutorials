@@ -179,9 +179,9 @@ Now we’ve built out our shared, cross-platform functionality in C++ so it can 
 
 Both Xcode and Android Studio can be used to build and run C++ projects. Android Studio has a few extra steps to see C++ output in the console, though, so we will just use Xcode for now.
 
-Open Xcode, and either select ‘Create a new Xcode project’ from the splash screen or go to File > New > Project from the top nav.
+Open Xcode, and either select ‘Create a new Xcode project’ from the splash screen or go to **File > New > Project** from the top nav.
 
-In the dialog that appears, select ‘Command Line Tool’ under OS X Application, and then click the Next button:
+In the dialog that appears, select 'macOS‘ from the menu at the top, then select 'Command Line Tool’ and then click the Next button:
 
 ![Xcode C++ Choose Template]({{ "/assets/images/hello-world-part-1/xcode_cpp_choose_template.png" | prepend:site.baseurl }} "Xcode C++ Choose Template")
 
@@ -191,7 +191,7 @@ In the next dialog, fill out your app name and organization name, and be sure to
 
 Finally, save the project in a new directory called ‘cpp_project’. We’ll also use this naming convention for other project directories later.
 
-![C++ Project Directory]({{ site.url | prepend:site.baseurl}}/assets/images/hello-world-part-1-cplusplus/cpp_project_directory.png "C++ Project Directory")
+![C++ Project Directory]({{ "/assets/images/hello-world-part-1/cpp_project_directory.png" | prepend:site.baseurl}} "C++ Project Directory")
 
 Now the new XCode project should open up, and if you run the project (**Product > Run**), you should see “Hello, World!” output to the console (You may need to enter your password to enable Development Mode if this is your first time in Xcode).
 
