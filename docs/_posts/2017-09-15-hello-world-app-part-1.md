@@ -44,6 +44,8 @@ The create() method will return an instance of our C++ object with the methods w
 
 This is the script that will run the djinni command, customized with the options that we require for our app. In keeping with the djinni example and the MX3 project, we’ll name this file `run_djinni.sh`:
 
+**run_djinni.sh**
+
 ```sh
 #! /usr/bin/env bash
 
@@ -114,7 +116,7 @@ In this part of the tutorial, we are writing what equates to the back end code i
 
 First, let’s create a new ‘src’ folder in our project folder structure, with a subfolder of ‘cpp’. This will house all of our C++ code outside of any project files, so that all of the projects can access the same C++ source code. In this new folder, create two new files ‘hello_world_impl.hpp’ and ‘hello_world_impl.cpp’:
 
-`src/cpp/hello_world_impl.hpp:`
+**src/cpp/hello_world_impl.hpp:**
 
 ```cpp
 #pragma once
@@ -138,7 +140,7 @@ namespace helloworld {
 }
 ```
 
-`src/cpp/hello_world_impl.cpp:`
+**src/cpp/hello_world_impl.cpp:**
 
 ```cpp
 #include "hello_world_impl.hpp"
@@ -215,7 +217,7 @@ Now your Xcode project should look similar to the following:
 
 The last step is to replace the contents of `main.cpp` with the following:
 
-`cpp_project/HelloWorld/HelloWorld/main.cpp:`
+**cpp_project/HelloWorld/HelloWorld/main.cpp:**
 
 ```
 #include <iostream>
@@ -237,4 +239,4 @@ Now if you run the project (press the ‘play’ button, or select Product > Run
 
 ![C++ Console]({{ "/assets/images/hello-world-part-1/cpp_console.png" | prepend:site.baseurl }} "C++ Console")
 
-In the next tutorial, we’ll tackle generating project files with GYP, implementing our working C++ code in Objective-C, and finally publishing to an iOS device or simulator.
+In the next tutorial, we’ll tackle implementing our working C++ code in Objective-C, and publishing to an iOS device or simulator.
