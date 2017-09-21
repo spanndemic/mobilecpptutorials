@@ -15,7 +15,6 @@ body {
 
 .markdown-body {
   background-color: white;
-  margin-bottom: 60px;
   position: relative;
 
   h2 {
@@ -160,10 +159,6 @@ em {
 }
 
 .series-header__number-wrap {
-  position: absolute;
-  top: -45px;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   border: 5px solid #0cd65e;
   width: 90px;
@@ -223,11 +218,12 @@ em {
 .post-nav__col .post-nav__content {
   position: relative;
   background-color: white;
+  padding-top: 15px;
 }
 
 .post-nav__link {
   display: block;
-  padding-top: 60px;
+  padding-top: 15px;
   padding-bottom: 15px;
   font-size: 16px;
   font-size: 1.6rem;
