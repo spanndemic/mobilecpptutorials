@@ -191,7 +191,7 @@ In the next dialog, fill out your app name and organization name, and be sure to
 
 ![Xcode C++ Choose Options]({{ "/assets/images/hello-world-part-1/xcode_cpp_choose_options.png" | prepend:site.baseurl}} "Xcode C++ Choose Options")
 
-Finally, save the project in a new directory called ‘cpp_project’. We’ll also use this naming convention for other project directories later.
+Finally, save the project in a new directory called ‘xcode_project’. We’ll also use this naming convention for other project directories later.
 
 ![Xcode Project Directory]({{ "/assets/images/hello-world-part-1/xcode_project_directory.png" | prepend:site.baseurl}} "C++ Project Directory")
 
