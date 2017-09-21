@@ -193,7 +193,7 @@ In the next dialog, fill out your app name and organization name, and be sure to
 
 Finally, save the project in a new directory called ‘cpp_project’. We’ll also use this naming convention for other project directories later.
 
-![C++ Project Directory]({{ "/assets/images/hello-world-part-1/cpp_project_directory.png" | prepend:site.baseurl}} "C++ Project Directory")
+![Xcode Project Directory]({{ "/assets/images/hello-world-part-1/xcode_project_directory.png" | prepend:site.baseurl}} "C++ Project Directory")
 
 Now the new XCode project should open up, and if you run the project (**Product > Run**), you should see “Hello, World!” output to the console (You may need to enter your password to enable Development Mode if this is your first time in Xcode).
 
