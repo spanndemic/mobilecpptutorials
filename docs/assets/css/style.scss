@@ -28,8 +28,12 @@ body {
     padding-left: 90px;
   }
 
-  h1, p, table, pre {
+  h1, p, table {
     margin: 20px 90px;
+  }
+
+  pre {
+    margin: 20px 90px 0;
   }
 
   code {
@@ -39,6 +43,10 @@ body {
   &> *:last-child {
     margin-bottom: 60px !important;
     paddin-bottom: 60px;
+  }
+
+  p + .highlighter-rouge {
+    margin-bottom: 0;
   }
 }
 
