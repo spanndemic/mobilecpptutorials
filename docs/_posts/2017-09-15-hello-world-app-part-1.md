@@ -235,6 +235,6 @@ int main(int argc, const char * argv[]) {
 
 Now if you run the project (press the ‘play’ button, or select Product > Run) you should see ‘Hello World!’ in the console at the bottom right, only now including the time of day from our C++ code!
 
-![C++ Console]({{ "/assets/images/hello-world-part-1/cpp_console.png | prepend:site.baseurl }} "C++ Console")
+![C++ Console]({{ "/assets/images/hello-world-part-1/cpp_console.png" | prepend:site.baseurl }} "C++ Console")
 
 In the next tutorial, we’ll tackle generating project files with GYP, implementing our working C++ code in Objective-C, and finally publishing to an iOS device or simulator.
