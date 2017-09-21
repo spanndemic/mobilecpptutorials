@@ -158,3 +158,44 @@ em {
     color: #bdbdbd;
   }
 }
+
+.post-nav {
+  border-top: 20px solid #e2e2e2;
+  background-color: #e2e2e2;
+}
+
+.post-nav .series__number {
+  font-size: 60px;
+  font-size: 6.0rem;
+  line-height: 60px;
+}
+
+.post-nav__col {
+  width: 49%;
+  float: left;
+}
+
+.post-nav__col.post-nav__col--right {
+  margin-left: 2%;
+}
+
+.post-nav__col .post-nav__content {
+  position: relative;
+  background-color: white;
+}
+
+.post-nav__link {
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 99;
+}
+
+.post-nav__link:hover {
+  color: #0cd65e;
+}
