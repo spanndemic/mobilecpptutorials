@@ -207,15 +207,13 @@ src/cpp/hello_world_impl.cpp
 src/cpp/hello_world_impl.hpp
 ```
 
-*Be sure to select ‘Create folder references’ and not ‘Copy items if needed’… otherwise Xcode will create duplicates of the files inside of the project folder, which would then be out of sync with the rest of our cross-platform C++ source files.
-
-Also, be sure you check the box next to your deployment target so the files will be included when you publish.*
+*Be sure to select ‘Create folder references’ and not ‘Copy items if needed’… otherwise Xcode will create duplicates of the files inside of the project folder, which would then be out of sync with the rest of our cross-platform C++ source files. Also, be sure you check the box next to your deployment target so the files will be included when you publish.*
 
 Now your Xcode project should look similar to the following:
 
 ![C++ Project]({{ "/assets/images/hello-world-part-1/cpp_project.png" | prepend:site.baseurl }} "C++ Project")
 
-The last step is to replace the contents of our main.cpp with the following:
+The last step is to replace the contents of `main.cpp` with the following:
 
 `cpp_project/HelloWorld/HelloWorld/main.cpp:`
 
