@@ -221,7 +221,7 @@ Now your Xcode project should look like the following:
 
 Our last step is to modify the `main.cpp` file to call our custom "Hello World" function. Replace the contents of the file with the following:
 
-**cpp_project/HelloWorld/HelloWorld/main.cpp:**
+**xcode_project/HelloWorld/HelloWorld/main.cpp:**
 
 ```cpp
 #include <iostream>
