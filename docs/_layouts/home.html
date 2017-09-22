@@ -24,7 +24,7 @@
     <ul>
       {% for post in site.posts reversed %}
         <li>
-          <div class="post__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');"></div>
+          <div class="post__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
           <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
       {% endfor %}
