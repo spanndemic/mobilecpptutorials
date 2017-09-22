@@ -105,8 +105,7 @@ Our last step is to create a UI that interacts with our C++ code. Edit `ViewCont
      
 }
  
-- (void)buttonWasPressed:(UIButton*)sender
-{
+- (void)buttonWasPressed:(UIButton*)sender {
     NSString *response = [_cppApi getHelloWorld];
     _textView.text = [NSString stringWithFormat:@"%@\n%@", response, _textView.text];
 }
