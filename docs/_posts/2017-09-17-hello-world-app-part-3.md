@@ -76,7 +76,7 @@ Notice we've added a list of all `.cpp` source files throughout our project, inc
 
 ## Add our Java source to the Gradle Build
 
-Next we need to tell Gradle where to find our Java source files that were generated outside of the project. In the project browser, open the `build.gradle` with '(Module: app)' next to it. Either replace the contents of the file with the below code, or you just add the `sourceSets` section to the existing file:
+Next we need to tell Gradle where to find our Java source files that were generated outside of the project. In the project browser, open the `build.gradle` with '(Module: app)' next to it. Either replace the contents of the file with the below code, or you can just add the `sourceSets` section to the existing file:
 
 **android_project/HelloWorld/app/build.gradle**
 
@@ -133,7 +133,7 @@ dependencies {
 }
 ```
 
-Gradle will need to sync after editing these file, and afterward you should see a ‘jni’ folder in your project browser, as well as additional files in your java folder:
+Gradle will need to sync after editing these file, and afterward you should see additional files in the ‘cpp’ folder in your project browser:
 
 ![Android Studio After Gradle]({{ "/assets/images/hello-world-part-3/browser_after_gradle.png" | prepend:site.baseurl }} "Android Studio After Gradle")
 
