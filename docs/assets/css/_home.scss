@@ -1,5 +1,10 @@
+.post-list__wrap {
+  padding: 60px 0;
+}
+
 .post-list__list-item {
   background-color: white;
+  margin-bottom: 30px;
 }
 
 .post-list__thumbnail {
@@ -7,4 +12,5 @@
   height: 180px;
   background-size: cover;
   background-position: center center;
+  float: left;
 }

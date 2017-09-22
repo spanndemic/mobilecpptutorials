@@ -2,13 +2,13 @@
 
 {% include header.html %}
 
-  <div class="post__hero-image" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');"></div>
-  <div class="container">
+  <div class="container post-list__wrap">
     <ul class="post-list">
       {% for post in site.posts reversed %}
         <li class="post-list__list-item">
           <div class="post-list__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
           <a class="post-list__link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <div class="clearfix"></div>
         </li>
       {% endfor %}
     </ul>
