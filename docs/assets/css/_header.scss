@@ -1,0 +1,50 @@
+.header__wrap {
+  height: 80px;
+  background-color: #4285f4;
+}
+
+.header {
+  line-height: 80px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.header__logo {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.header__title {
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.8rem;
+  margin-left: 8px;
+}
+
+.header-nav {
+  position: absolute;
+  line-height: 80px;
+  right: 20px;
+  top: 0;
+  color: white;
+}
+
+.header-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav__list-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.header-nav__link {
+  color: white;
+}

@@ -3,12 +3,12 @@
 {% include header.html %}
 
   <div class="post__hero-image" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ page.hero }}.jpg');"></div>
-  <div class="container markdown-body">
-    <ul>
+  <div class="container">
+    <ul class="post-list">
       {% for post in site.posts reversed %}
-        <li>
-          <div class="post__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <li class="post-list__list-item">
+          <div class="post-list__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
+          <a class="post-list__link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
       {% endfor %}
     </ul>
