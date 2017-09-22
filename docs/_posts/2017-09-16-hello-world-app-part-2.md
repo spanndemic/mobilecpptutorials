@@ -80,7 +80,7 @@ Our last step is to create a UI that interacts with our C++ code. Edit `ViewCont
 @end
  
 @implementation ViewController {
-    HWHelloWorld *_helloWorldInterface;
+    HWHelloWorld *_cppApi;
     UIButton *_button;
     UITextView *_textView;
 }
@@ -89,7 +89,7 @@ Our last step is to create a UI that interacts with our C++ code. Edit `ViewCont
     [super viewDidLoad];
      
     // instantiate our library interface
-    _helloWorldInterface = [HWHelloWorld create];
+    _cppApi = [HWHelloWorld create];
      
     // create a button programatically for the demo
     _button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -100,7 +100,6 @@ Our last step is to create a UI that interacts with our C++ code. Edit `ViewCont
      
     // create a text view programatically
     _textView = [[UITextView alloc] init];
-    // x, y, width, height
     _textView.frame = CGRectMake(20.0, 80.0, 280.0, 380.0);
     [self.view addSubview:_textView];
      
@@ -108,7 +107,7 @@ Our last step is to create a UI that interacts with our C++ code. Edit `ViewCont
  
 - (void)buttonWasPressed:(UIButton*)sender
 {
-    NSString *response = [_helloWorldInterface getHelloWorld];
+    NSString *response = [_cppApi getHelloWorld];
     _textView.text = [NSString stringWithFormat:@"%@\n%@", response, _textView.text];
 }
  
