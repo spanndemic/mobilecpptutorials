@@ -8,145 +8,70 @@ redirect_from:
   - /your-first-cross-platform-djinni-app-part-2-ios/
 ---
 
-In Part 2 of this tutorial, we will create an Xcode workspace for our platform-specific iOS app code, build out a simple UI for our app in Xcode, and finally publish the app on the iOS simulator or an iOS device.
+In Part 2 of this tutorial, we will add a target to our Xcode workspace for our platform-specific iOS app code, build out a simple UI for our app in Xcode, and finally publish the app on the iOS simulator or an iOS device.
 
-## Create an Xcode Workspace
+## Add an iOS Target to the Xcode Project
 
-In order for our code to be nice and organized, we’re going to need an Xcode workspace, with libraries as sub-projects. This is a similar technique that CocoaPods uses, if you are familiar with them.
+To add a new target to our Xcode project, select **File > New > Target...**, then select **iOS** and scroll down to **Application > Single View Application** in the template menu, then click 'Next':
 
-To create an Xcode workspace, open up Xcode and select **File > New > Workspace**. Create a new folder in the project root called ‘ios_project’ to distinguish it from our C++ project. Save the workspace as ‘HelloWorld.xcworkspace’… the file extension may be hidden.
+![iOS Add Target]({{ "/assets/images/hello-world-part-2/ios_add_target.png" | prepend:site.baseurl }} "iOS Add Target")
 
-Now, we need to add our iOS App as a sub-project to the workspace. Select **File > New > Project** and select **iOS > Application > Single View Application**.
+In the following dialog, enter the name 'Hello World iOS' for the target name. Also uncheck 'Include Unit Tests' and 'Include UI Tests' to avoid creating additional targets and to keep our project tidy:
 
-Set the Product Name to ‘HelloWorld’ and configure your Organization as you see fit. Be sure to pick Objective-C as the Language and be sure to add the Project to the ‘HelloWorld’ workspace:
+![New Target Options]({{ "/assets/images/hello-world-part-2/new_target_options.png" | prepend:site.baseurl }} "New Target Options")
 
-![Add to Workspace]({{ "/assets/images/hello-world-part-2/add_to_workspace.png" | prepend:site.baseurl }} "Add to Workspace")
+In order to switch between publishing our C++ app and our iOS app, we will need to change schemes. Switch to they 'Hello World iOS' scheme with the dropdown next to the Play/Stop buttons. You'll also select need to select a simulator. I'm using the iPhone 5S here because it is a little less enormous than the others:
 
-Publish to make sure the workspace + project is working, the simulator should open up with the default loading screen and then a blank white screen.
+![iOS Change Scheme]({{ "/assets/images/hello-world-part-2/ios_change_scheme.png" | prepend:site.baseurl }} "iOS Change Scheme")
 
-## Generate iOS Libaries
+Finally, run the default iOS app in the simulator by pressing the 'Play' button, and you should have the simulator open up with a blank white screen and no errors.
 
-Now we need to generate our Objective-C compatible libraries, using a combination of djinni, make, and gyp.
+## Add our C++ Source and Objective-C Bridge code to the iOS Target
 
-First, let’s create our GYP file.
+Since our our C++ Source is already in the Xcode Project, we can simply add our C++ source files to the new iOS target. To do this, highlight the file `hello_world_impl.cpp` and find the 'Target Membership' menu on the right side of the screen. Be sure that 'Hello World C++' and 'Hello World iOS' are both checked. Note that you do not need to add the header files (`.hpp`):
 
-Our GYP file will house critical information for our make commands to generate our iOS and Android library files. Create a new file at the root of the workspace:
+![Add Src to Target]({{ "/assets/images/hello-world-part-2/add_src_to_target.png" | prepend:site.baseurl }} "Add Src to Target")
 
-`libhelloworld.gyp`:
-
-```
-{
-    "targets": [
-        {
-            "target_name": "libhelloworld_jni",
-            "type": "shared_library",
-            "dependencies": [
-              "./deps/djinni/support-lib/support_lib.gyp:djinni_jni",
-            ],
-            "ldflags": [ "-llog", "-Wl,--build-id,--gc-sections,--exclude-libs,ALL" ],
-            "sources": [
-              "./deps/djinni/support-lib/jni/djinni_main.cpp",
-            ],
-            "include_dirs": [
-              "generated-src/jni",
-              "generated-src/cpp",
-              "src/cpp",
-            ],
-        },
-        {
-            "target_name": "libhelloworld_objc",
-            "type": 'static_library',
-            "dependencies": [
-              "./deps/djinni/support-lib/support_lib.gyp:djinni_objc",
-            ],
-            'direct_dependent_settings': {
-
-            },
-            "sources": [
-              "<!@(python deps/djinni/example/glob.py generated-src/objc  '*.cpp' '*.mm' '*.m')",
-              "<!@(python deps/djinni/example/glob.py generated-src/cpp   '*.cpp')",
-              "<!@(python deps/djinni/example/glob.py src '*.cpp')",
-            ],
-            "include_dirs": [
-              "generated-src/objc",
-              "generated-src/cpp",
-              "src/cpp",
-            ],
-        },
-    ],
-}
-```
-
-Next, let’s create our Makefile:
-
-*Copying and pasting the text below may result in spaces instead of tabs, which make does not agree with. I recommend copying/pasting from the Github project instead: [https://github.com/spanndemic/djinni-hello-world/blob/master/Makefile](Makefile)*
-
-`Makefile:`
+Next, let's add the rest of the bridge code that Djinni generated for iOS to communicate with C++. Drag the following files into Xcode’s folder structure, inside the **Hello World iOS** project folder in a new group named 'Bridge':
 
 ```
-# we specify a root target for android to prevent all of the targets from spidering out
-./build_ios/libhelloworld.xcodeproj: libhelloworld.gyp ./deps/djinni/support-lib/support_lib.gyp helloworld.djinni
-  sh ./run_djinni.sh
-  deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./libhelloworld.gyp
-
-ios: ./build_ios/libhelloworld.xcodeproj
-  xcodebuild -workspace ios_project/HelloWorld.xcworkspace \
-           -scheme HelloWorld \
-           -configuration 'Debug' \
-           -sdk iphonesimulator
-
-# we specify a root target for android to prevent all of the targets from spidering out
-GypAndroid.mk: libhelloworld.gyp ./deps/djinni/support-lib/support_lib.gyp helloworld.djinni
-  sh ./run_djinni.sh
-  ANDROID_BUILD_TOP=$(shell dirname `which ndk-build`) deps/gyp/gyp --depth=. -f android -DOS=android -Ideps/djinni/common.gypi ./libhelloworld.gyp --root-target=libhelloworld_jni
-
-# this target implicitly depends on GypAndroid.mk since gradle will try to make it
-android: GypAndroid.mk
-  cd android_project/HelloWorld/ && ./gradlew app:assembleDebug
-  @echo "Apks produced at:"
-  @python deps/djinni/example/glob.py ./ '*.apk'
+generated-src/objc/HWHelloWorld.h
+generated-src/objc/HWHelloWorld+Private.h
+generated-src/objc/HWHelloWorld+Private.mm
 ```
 
-*This Makefile includes an android target which will be used in the next tutorial.*
+You will get a similar dialog to the C++ files, select 'Create folder references' and select the 'Hello World iOS' target. You do not need to add these files to the previous C++ target.
 
-Now, with a combination of our Xcode Workspace, we can run our make command which will generate our Djinni and Hello World library files. In the Terminal app at the project root, enter the following:
+*Note that a `.mm` file extension signifies a file that can include both Objective-C and C++ code... also known as Objective-C++.*
 
-```
-$ make ios
-```
-
-You should now see a new directory, ‘build_ios’ with a file named ‘libhelloworld.xcodeproj’ and another (deeply-nested) file named ‘support_lib.xcodeproj’.
-
-Add the two generated projects to the XCode Workspace… control-click on the grey area below the project navigator and select ‘add files to HelloWorld’. Again, be sure to add folder references instead of copy.
-
-## Add the libraries to the build
-
-Now, we need to add the libraries to our Build Phases. Click the ‘HelloWorld’ project, then select the HelloWorld target (you may need to expand the sidebar with the button in the top left). Then click the ‘Build Phases’ tab, then under Link Binaries With Libraries’, Add both `libhelloworld_objc.a` and `libdjinni_objc.a`:
-
-![Xcode Add Libraries]({{ "/assets/images/hello-world-part-2/xcode_add_libraries.png" | prepend:site.baseurl }} "Xcode Add Libraries")
-
-Now, we need to add header search paths for the libraries we added. Still in the ‘HelloWorld’ target, select the ‘Build Settings’ tab. Be sure ‘All’ is selected to the left instead of ‘Basic’. Now search for ‘User Header Search Paths’ and add the following:
+We'll also need some additional Djinni source files, drag and drop the contents of the `deps/djinni/support-lib/objc/` folder into the project as well into a folder labeled 'Djinni':
 
 ```
-$(SRCROOT)/../../deps/djinni/support-lib/objc
-$(SRCROOT)/../../generated-src/objc
+deps/djinni/support-lib/objc/DJICppWrapperCache+Private.h
+deps/djinni/support-lib/objc/DJIError.h
+deps/djinni/support-lib/objc/DJIError.mm
+deps/djinni/support-lib/objc/DJIMarchal+Private.h
+deps/djinni/support-lib/objc/DJIObjcWrapperCache+Private.h
+deps/djinni/support-lib/objc/DJIProxyCaches.h
 ```
 
-Finally, rename the main.m file to main.mm to be compatible with our Objective-C++ bridge code. The file should be located here: HelloWorld/Supporting Files/main.m.
+Finally, click the `main.m` filename and rename it to `main.mm` to be compatible with our Objective-C++ bridge code. The file should be located here: `HelloWorld/Supporting Files/main.m`:
 
-You should now run the project and make sure there are no errors (will still be a splash screen then a blank white screen).
+![iOS Rename Main]({{ "/assets/images/hello-world-part-2/ios_rename_main.png" | prepend:site.baseurl }} "iOS Rename Main")
+
+Your project should now have all of the following source files available:
+
+![iOS After Bridge]({{ "/assets/images/hello-world-part-2/ios_rename_main.png" | prepend:site.baseurl }} "iOS After Bridge")
+
+You should now run the project and make sure there are no errors... though the simulator screen will still just show a blank white screen!
 
 ## Publish to the iOS simulator or a device
 
-Now we have all of the ingredients for our app inside the XCode workspace, and your project browser should look something like this:
-
-![Xcode Project Dir After Libraries]({{ "/assets/images/hello-world-part-2/xcode_project_dir_after_libraries.png" | prepend:site.baseurl }} "Xcode Project Dir After Libraries")
-
-Only step left is to create a UI, and call our getHelloWorld function from inside our View Controller. Edit ViewController.m to be the following:
+Our last step is to create a UI that interacts with our C++ code. Edit `ViewController.m` to be the following:
 
 `ViewController.m`:
 
-```
+```obj-c
 #import "ViewController.h"
 #import "HWHelloWorld.h"
  
@@ -195,9 +120,9 @@ Only step left is to create a UI, and call our getHelloWorld function from insid
 @end
 ```
 
-Hopefully you can now publish the app (**Product > Run**) and will get a white-screen with a button labeled ‘Get Hello World!’. Pressing the button should add a line to the text view reading ‘Hello World!’ and the current time.
+Now when you publish the app (**Product > Run** or the 'Play' button), you should get a white-screen with a button labeled ‘Get Hello World!’. Pressing the button should add a line to the text view reading ‘Hello World!’ and the current time, which was generated by our C++ code in Part 1 of this tutorial:
 
 ![iOS Complete]({{ "/assets/images/hello-world-part-2/ios_complete.png" | prepend:site.baseurl }} "iOS Complete")
 
-In the next tutorial we’ll go through the same process for Android… creating a simple UI, connecting functionality and ultimately publishing to an Android device or simulator.
+In the next tutorial we’ll go through the same process for Android... creating a simple UI, connecting functionality and ultimately publishing to an Android device or simulator.
 
