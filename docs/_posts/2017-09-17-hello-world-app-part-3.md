@@ -41,133 +41,95 @@ On the fifth screen, select 'C++11' for the C++ Standard, and check both the 'Ex
 
 Click 'Finish' to complete the wizard, then publish the app to either a simulator or a device with the 'Play' button near the top of the screen to make sure everything is working. You should see a white screen with 'Hello from C++' displayed, but don’t get too excited yet because we still need to implement our C++ code!
 
-## Customize the Gradle Build
+## Add Our C++ files to CMakeLists.txt
 
-Android studio will now handle the CMake build for us, we just have to configure Gradle to point to our C++ and JNI source files.
+Android Studio will crate a library for us via CMake, we just have to configure the `CMakeLists.txt` file to point to all of the needed C++ and JNI files.
 
-We will utilize the experimental gradle plugin with Android Studio which provides a bit more C++ support when compiling the project (without the need for makefiles or GYP).
+In the Project folder nav, double click the `CMakeLists.txt` file to open it. This file has some useful notes about CMake builds in general if you want to look them over. For our project, we will just replace the file with the following:
 
-More information regarding the setup of the experimental gradle plugin can be found here: http://tools.android.com/tech-docs/new-build-system/gradle-experimental
-
-Edit the following files either by using a text editor or directly in Android Studio under ‘Gradle Scripts’:
-
-`gradle-wrapper.properties`:
+**android_project/HelloWorld/app/CMakeLists.txt**
 
 ```
-#Wed Oct 21 11:34:03 PDT 2015
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-2.10-all.zip
+cmake_minimum_required(VERSION 3.4.1)
+
+file(GLOB helloworld_sources
+    ../../../deps/djinni/support-lib/jni/*.cpp
+    ../../../generated-src/jni/*.cpp
+    ../../../src/cpp/*.cpp
+)
+
+add_library(helloworld SHARED ${helloworld_sources})
+
+# include directories for header files
+include_directories(
+    ../../../deps/djinni/support-lib/
+    ../../../deps/djinni/support-lib/jni/
+    ../../../generated-src/cpp/
+    ../../../generated-src/jni/
+    ../../../src/cpp/
+)
+
+target_link_libraries(helloworld)
 ```
 
-`HelloWorld/build.gradle`:
+Notice we've added a list of all `.cpp` source files throughout our project, including the Djinni support library, the automatically-generated bridge code, and our hand-written source files. The `include_directories` includes the paths to all of our `.hpp` header files needed to build the library.
+
+## Add our Java source to the Gradle Build
+
+Next we need to tell Gradle where to find our Java source files that were generated outside of the project. In the project browser, open the `build.gradle` with '(Module: app)' next to it. Either replace the contents of the file with the below code, or you just add the `sourceSets` section to the existing file:
+
+**android_project/HelloWorld/app/build.gradle**
 
 ```
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle-experimental:0.8.3"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-```
-
-*The format of the following build.gradle file has been subject to change several times in recent months. If you get errors, double check what version of the plugin you are using, and check the experimental plugin page for syntax updates: [http://tools.android.com/tech-docs/new-build-system/gradle-experimental](http://tools.android.com/tech-docs/new-build-system/gradle-experimental)*
-
-
-`app/build.gradle`
-
-```
-apply plugin: "com.android.model.application"
-
-model {
-    android {
-        compileSdkVersion 23
-        buildToolsVersion "23.0.0"
-
-        defaultConfig.with {
-            applicationId "com.mycompany.helloworld"
-            minSdkVersion.apiLevel 15
-            targetSdkVersion.apiLevel 22
-            versionCode 1
-            versionName "1.0"
-        }
-
-        buildTypes {
-            release {
-                minifyEnabled false
-                proguardFiles.add(file("proguard-rules.pro"))
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.mycompany.helloworld"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -frtti -fexceptions"
             }
         }
-
-        productFlavors {
-            create("flavor1") {
-                applicationId "com.mycompany.helloworld"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = [
+                        "../../../generated-src/java",
+                        "src/main/java"
+                ]
             }
         }
-
-        sources {
-            main {
-                jni {
-                    source {
-                        srcDirs = [
-                                "../../../deps/djinni/support-lib/jni",
-                                "../../../generated-src/cpp",
-                                "../../../generated-src/jni",
-                                "../../../src/cpp"
-                        ]
-                    }
-                }
-
-                java {
-                    source {
-                        srcDirs = [
-                                "../../../generated-src/java",
-                                "src/main/java"
-                        ]
-                    }
-                }
-            }
-        }
-        ndk {
-            toolchain = "gcc"
-            toolchainVersion = "4.9"
-            moduleName = "helloworld"
-            stl = "gnustl_shared"
-            cppFlags.add("-std=c++11")
-            cppFlags.add("-fexceptions")
-            cppFlags.add("-frtti")
-            cppFlags.add("-I${file("../../../deps/djinni/support-lib")}".toString())
-            cppFlags.add("-I${file("../../../deps/djinni/support-lib/jni")}".toString())        // djinni src
-            cppFlags.add("-I${file("../../../generated-src/cpp")}".toString())               // app generated-src
-            cppFlags.add("-I${file("../../../generated-src/jni")}".toString())                   // app generated-src
-            cppFlags.add("-I${file("../../../src/cpp")}".toString())
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:22.2.0"
-    compile "com.android.support:design:23.1.1"
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }
 ```
 
@@ -175,13 +137,13 @@ Gradle will need to sync after editing these file, and afterward you should see 
 
 ![Android Studio After Gradle]({{ "/assets/images/hello-world-part-3/browser_after_gradle.png" | prepend:site.baseurl }} "Android Studio After Gradle")
 
-## Build the App
+## Build the Android UI
 
 Now we can get to coding and implement our C++ library within the Android app.
 
-Back in Android Studio within our project, let’s edit our MainActivity file. It is likely already open, but if not it is usually located at:
+Back in Android Studio within our project, let’s edit our MainActivity file. It is likely already open, but if not it is usually located in the project browser at this location:
 
-**app > java > main > java.com.mycompany.helloworld > MainActivity**
+**app > java > com.mycompany.helloworld**
 
 Either replace the contents of the file with the code below, or add the highlighted lines:
 
@@ -192,17 +154,14 @@ package com.mycompany.helloworld;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private HelloWorld helloWorldInterface;
+    private HelloWorld cppApi;
 
     static {
-        System.loadLibrary("gnustl_shared");
         System.loadLibrary("helloworld");
     }
 
@@ -211,42 +170,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        helloWorldInterface = HelloWorld.create();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        cppApi = HelloWorld.create();
     }
 
     public void buttonWasPressed(View view) {
-        String myString = helloWorldInterface.getHelloWorld() + "\n";
+        String myString = cppApi.getHelloWorld() + "\n";
         TextView t = (TextView) findViewById(R.id.helloWorldText);
         t.setText(myString + t.getText());
     }
 }
 ```
 
+Then edit the `activity_main.xml` file to include our UI with a button to click and a text field to display our C++ responses:
+
 `activity_main.xml`
 
-```
+```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
