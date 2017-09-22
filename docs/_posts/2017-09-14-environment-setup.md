@@ -53,7 +53,7 @@ Needed to publish Android apps to either a simulator or device.
 
 After downloading, open up Android Studio and follow the prompts for a Custom Install Type. Pick either the light or dark theme, and check all boxes on the SDK Components Setup so we have a Virtual Device to run our Android apps on:
 
-![SDK Components Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/sdk_components_setup.png "SDK Components Setup")
+![SDK Components Setup]({{ "/assets/images/environment-setup/sdk_components_setup.png" | prepend:site.baseurl }} "SDK Components Setup")
 
 After clicking 'OK' get another coffee/beer/snack because you'll be on the 'Downloading Components' screen a while.
 
@@ -65,11 +65,11 @@ We can actually install the NDK from within Android Studio in the Project Struct
 
 From the quick start menu select **Configure > SDK Manager** from the dropdown at the bottom:
 
-![Configure SDK Manager](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/configure_sdk_manager.png "Configure SDK Manager")
+![Configure SDK Manager]({{ "/assets/images/environment-setup/configure_sdk_manager.png" | prepend:site.baseurl }} "Configure SDK Manager")
 
 On the screen that follows, click **SDK Tools** at the top, and be sure you have all of the following checked and installed - CMake, Android Emulator, and the NDK:
 
-![Android SDK Manager](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/configure_sdk_manager.png "Android SDK Manager")
+![Android SDK Manager]({{ "/assets/images/environment-setup/android_sdk_manager.png" | prepend:site.baseurl }} "Android SDK Manager")
 
 Click the 'OK' button to accept more license agreements and begin the downloads. 
 
