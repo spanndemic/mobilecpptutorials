@@ -8,34 +8,42 @@ redirect_from:
   - /your-first-cross-platform-djinni-app-part-3-android/
 ---
 
-In the third and final part of this tutorial, we will setup our initial Android project, build a JNI library from our Djinni files, include the library in our Android project and finally publish to a device/simulator.
-
-**January 26, 2016:**
-This tutorial was updated to use the experimental Gradle plugin instead of building libraries with GYP.
+In the third and final part of this tutorial, we will setup our Android project to include our JNI bridge and C++ functionality from Part 1, then finally publish to a device/simulator.
 
 ## Create a New Android Project
 
 Open up Android Studio, and select ‘Start a new Android Studio project’ from the Quick Start menu on the splash screen, or select **File > New > New Project** from the top navigation.
 
-On the info screen, enter the following:
+On the info screen, enter the following, being sure the package name and Project location match the screenshot below:
 
-Application Name: Hello World
+* 'HelloWorld' for the Application name
+* 'mycompany.com' for the Company domain
+* Check 'Include C++ support'
+* Project location is '<your project directory>/android_project/HelloWorld' (This is important so we can use relative file paths to our C++ and JNI code)
 
-Company Domain: mycompany.com
+![Android New Project]({{ "/assets/images/hello-world-part-3/android_new_project.png" | prepend:site.baseurl }} "Android New Project")
 
-Project Location: Create a new folder inside your project, here I’ve chosen ‘android_project’ to be consistent with our other Xcode project naming:
+On the second screen, keep the defaults ('Phone and Tablet' checkbox selected, Minimum SDK API 15):
 
-![Android Studio New Project]({{ "/assets/images/hello-world-part-3/AS_new_project.png" | prepend:site.baseurl }} "Android Studio New Project")
+![Android Target Devices]({{ "/assets/images/hello-world-part-3/android_target_devices.png" | prepend:site.baseurl }} "Android Target Devices")
 
-*Be sure to set the company domain to ‘mycompany.com’. This is utilized in your java package name which is used in other scripts in this tutorial.*
+On the third screen, keep the default 'Empty Activity' selected:
 
-For the remaining screens in the wizard (Form Factors, Add an Activity, and Customize the Activity), just click ‘Next’ or ‘Finish’ to keep the defaults.
+![Android Empty Activity]({{ "/assets/images/hello-world-part-3/android_empty_activity.png" | prepend:site.baseurl }} "Android Empty Activity")
 
-Publish the app to make sure it works, selecting either an Android device connected to your machine or an available simulator. You’ll see “Hello World” in an otherwise blank Android screen when the app runs, but don’t get too excited because we still need to implement our C++ code!
+On the fourth screen, keep the default Activity Name 'MainActivity' and Layout Name 'activity_main':
 
-*If this is the first time you are publishing to an Android device, you may need to enable USB debugging on the device (should get a popup on the device).*
+![Android Customize Activity]({{ "/assets/images/hello-world-part-3/android_customize_activity.png" | prepend:site.baseurl }} "Android Customize Activity")
 
-## Configure the Experimental Gradle Build
+On the fifth screen, select 'C++11' for the C++ Standard, and check both the 'Exceptions Support' and 'Runtime Type Information Support' so we have all of the C++ goodies that Android Studio has to offer:
+
+![Android Customize C++]({{ "/assets/images/hello-world-part-3/android_customize_cpp.png" | prepend:site.baseurl }} "Android Customize C++")
+
+Click 'Finish' to complete the wizard, then publish the app to either a simulator or a device with the 'Play' button near the top of the screen to make sure everything is working. You should see a white screen with 'Hello from C++' displayed, but don’t get too excited yet because we still need to implement our C++ code!
+
+## Customize the Gradle Build
+
+Android studio will now handle the CMake build for us, we just have to configure Gradle to point to our C++ and JNI source files.
 
 We will utilize the experimental gradle plugin with Android Studio which provides a bit more C++ support when compiling the project (without the need for makefiles or GYP).
 
