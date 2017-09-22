@@ -2,8 +2,8 @@
 series: Hello World App
 title: Cross-Platform C++ Dev Setup on macOS Sierra
 hero: dev-setup
-image-credit: Toni Rodrigo
-image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
+image-credit: Travis Wise
+image-credit-link: https://www.flickr.com/photos/photographingtravis/16212948441/
 redirect_from:
   - /cross-platform-cplusplus-dev-setup-on-os-x-yosemite/
 ---
