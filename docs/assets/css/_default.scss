@@ -74,7 +74,6 @@
 
   &> *:last-child {
     margin-bottom: 60px !important;
-    paddin-bottom: 60px;
   }
 
   p + .highlighter-rouge {
@@ -100,8 +99,24 @@
   }
 }
 
+.github-links {
+  background-color: white;
+  margin-top: 30px;
+  padding: 20px 90px;
+  text-align: center;
+}
+
+.github-links__header {
+  color: #4285f4;
+  font-size: 3.0rem;
+}
+
+.github-links__copy {
+  font-size: 1.8rem;
+}
+
 .post-nav {
-  border-top: 20px solid #e2e2e2;
+  border-top: 30px solid #e2e2e2;
   background-color: #e2e2e2;
 }
 
