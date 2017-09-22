@@ -8,7 +8,7 @@ redirect_from:
   - /your-first-cross-platform-djinni-app-part-2-ios/
 ---
 
-In Part 2 of this tutorial, we will add a target to our Xcode workspace for our platform-specific iOS app code, build out a simple UI for our app in Xcode, and finally publish the app on the iOS simulator or an iOS device.
+In Part 2 of this tutorial, we will add a target to our Xcode workspace for our platform-specific iOS app code, build out a simple UI for our app in Xcode, and finally publish the app to the iOS simulator.
 
 ## Add an iOS Target to the Xcode Project
 
@@ -20,15 +20,15 @@ In the following dialog, enter the name 'Hello World iOS' for the target name. A
 
 ![New Target Options]({{ "/assets/images/hello-world-part-2/new_target_options.png" | prepend:site.baseurl }} "New Target Options")
 
-In order to switch between publishing our C++ app and our iOS app, we will need to change schemes. Switch to they 'Hello World iOS' scheme with the dropdown next to the Play/Stop buttons. You'll also select need to select a simulator. I'm using the iPhone 5S here because it is a little less enormous than the others:
+In order to switch between publishing our C++ app and our iOS app, we will need to change schemes. Switch to the 'Hello World iOS' scheme with the dropdown next to the Play/Stop buttons. You'll also need to select a simulator. I'm using the iPhone 5S here because it is a little less enormous than the others:
 
 ![iOS Change Scheme]({{ "/assets/images/hello-world-part-2/ios_change_scheme.png" | prepend:site.baseurl }} "iOS Change Scheme")
 
 Finally, run the default iOS app in the simulator by pressing the 'Play' button, and you should have the simulator open up with a blank white screen and no errors.
 
-## Add our C++ Source and Objective-C Bridge code to the iOS Target
+## Add our C++ and Bridge code to the iOS Target
 
-Since our our C++ Source is already in the Xcode Project, we can simply add our C++ source files to the new iOS target. To do this, highlight the file `hello_world_impl.cpp` and find the 'Target Membership' menu on the right side of the screen. Be sure that 'Hello World C++' and 'Hello World iOS' are both checked. Note that you do not need to add the header files (`.hpp`):
+Since our our C++ Source is already in the Xcode Project, we can simply add our C++ source files to the new iOS target. To do this, highlight the file `hello_world_impl.cpp` and find the 'Target Membership' menu on the right side of the screen. Be sure that 'Hello World C++' and 'Hello World iOS' are both checked. Note that you do not need to add the header files that end in `.hpp`:
 
 ![Add Src to Target]({{ "/assets/images/hello-world-part-2/add_src_to_target.png" | prepend:site.baseurl }} "Add Src to Target")
 
@@ -61,11 +61,11 @@ Finally, click the `main.m` filename and rename it to `main.mm` to be compatible
 
 Your project should now have all of the following source files available:
 
-![iOS After Bridge]({{ "/assets/images/hello-world-part-2/ios_rename_main.png" | prepend:site.baseurl }} "iOS After Bridge")
+![iOS After Bridge]({{ "/assets/images/hello-world-part-2/ios_after_bridge.png" | prepend:site.baseurl }} "iOS After Bridge")
 
 You should now run the project and make sure there are no errors... though the simulator screen will still just show a blank white screen!
 
-## Publish to the iOS simulator or a device
+## Build a UI and Publish to the Simulator
 
 Our last step is to create a UI that interacts with our C++ code. Edit `ViewController.m` to be the following:
 
