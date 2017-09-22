@@ -48,6 +48,10 @@ body {
   p + .highlighter-rouge {
     margin-bottom: 0;
   }
+
+  ul, ol {
+    margin: 20px 90px;
+  }
 }
 
 h1 {
@@ -124,6 +128,13 @@ em {
   background-position: center center;
   position: absolute;
   max-width: 100%;
+}
+
+.post__thumbnail {
+  max-width: 320px;
+  max-height: 180px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .post-header {
