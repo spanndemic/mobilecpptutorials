@@ -6,10 +6,9 @@
     <ul class="post-list">
       {% for post in site.posts reversed %}
         <li class="post-list__list-item">
-          <a class="post-list__link" href="{{ site.baseurl }}{{ post.url }}">
-            <div class="post-list__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
-            {{ post.title }}
-          </a>
+          <div class="post-list__thumbnail" style="background-image: url('{{ site.baseurl }}/assets/images/hero-images/{{ post.hero }}.jpg');"></div>
+          <div class="post-list__title">{{ post.title }}</div>
+          <a class="post-list__link" href="{{ site.baseurl }}{{ post.url }}"></a>
           <div class="clearfix"></div>
         </li>
       {% endfor %}

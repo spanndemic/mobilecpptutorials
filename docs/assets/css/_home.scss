@@ -9,6 +9,7 @@
 .post-list__list-item {
   background-color: white;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .post-list__thumbnail {
@@ -19,8 +20,16 @@
   float: left;
 }
 
-.post-list__link {
+.post-list__title {
   padding: 30px 30px 30px 350px;
+}
+
+.post-list__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   display: block;
   font-size: 2.4rem;
 }
