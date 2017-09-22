@@ -51,61 +51,28 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
 
 Needed to publish Android apps to either a simulator or device.
 
-After downloading, open up Android Studio and follow the prompts for a Custom Install Type. Pick either the light or dark theme, and check all boxes on the SDK Components Setup:
+After downloading, open up Android Studio and follow the prompts for a Custom Install Type. Pick either the light or dark theme, and check all boxes on the SDK Components Setup so we have a Virtual Device to run our Android apps on:
 
 ![SDK Components Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/sdk_components_setup.png "SDK Components Setup")
 
-## 4. Android NDK
+After clicking 'OK' get another coffee/beer/snack because you'll be on the 'Downloading Components' screen a while.
 
-| Link | Size |
-|:--|:--|
-| [Android NDK Download Page](http://developer.android.com/ndk/downloads/index.html) | 371 MB |
+## 4. Android NDK and CMake
 
-Needed for GYP to generate Android studio files and for Android Studio to understand C++ code.
+We need to install both the Android NDK (Native Development Kit) and CMake to publish an Android app with C++ code.
 
 We can actually install the NDK from within Android Studio in the Project Structure section.
 
-From the quick start menu select **Configure > Project Defaults > Project Structure**, or from the main nav select **File > Other Settings > Default Project Structure**.
+From the quick start menu select **Configure > SDK Manager** from the dropdown at the bottom:
 
-This should take you to a screen showing the location of the Android SDK and the JDK we installed earlier in this tutorial. Currently, the Android NDK location should be blank:
+![Configure SDK Manager](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/configure_sdk_manager.png "Configure SDK Manager")
 
-![NDK Install](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/ndk_install.png "NDK Install")
+On the screen that follows, click **SDK Tools** at the top, and be sure you have all of the following checked and installed - CMake, Android Emulator, and the NDK:
 
-Click the 'Download Android NDK' link below the text field, which will start the NDK download. After the download and install completes, you should be able to return to this screen and see the NDK location filled in.
+![Android SDK Manager](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/environment-setup/configure_sdk_manager.png "Android SDK Manager")
 
-Our last step is to set up our $PATH as well as some Android variables in our bash profile.
-
-Add the following to the .bash_profile file in your $HOME directory. You may need to create the file if you do not have one:
-
-**$HOME/.bash_profile:**
-
-```
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-export ANDROID_NDK_HOME=$HOME/Library/Android/sdk/ndk-bundle
-export PATH=$PATH:$ANDROID_NDK_HOME
-```
-
-Then, be sure to reload your bash profile with the following command in the Terminal app:
-
-`source ~/.bash_profile`
-
-To verify that the SDK and NDK command line tools were installed properly for use with GYP, run the following commands in the Terminal app and verify you see a similar output (except with your home directory):
-
-
-`which android`
-
-```
-/Users/stephenspann/Library/Android/sdk/tools/android
-```
-
-`which ndk-build`
-
-```
-/Users/stephenspann/Library/Android/sdk/ndk-bundle/ndk-build
-```
+Click the 'OK' button to accept more license agreements and begin the downloads. 
 
 If you've made it this far, then you should be set to tackle the other tutorials on this site. Hopefully we've installed everything you need to get started, and you won't be delayed during any of the other tutorials.
 
-If you run into an issue, feel free to submit an issue or (preferably) a pull request on [GitHub](https://github.com/spanndemic/mobilecpptutorials)
+If you run into an issue, feel free to submit an issue or (better yet!) a pull request on [GitHub](https://github.com/spanndemic/mobilecpptutorials)
