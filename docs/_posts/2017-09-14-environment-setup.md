@@ -1,7 +1,7 @@
 ---
 series: Hello World App
 title: Cross-Platform C++ Dev Setup on macOS Sierra
-hero: hello-world-app
+hero: dev-setup
 image-credit: Toni Rodrigo
 image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
 redirect_from:

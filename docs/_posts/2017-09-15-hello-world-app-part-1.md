@@ -1,9 +1,9 @@
 ---
 series: Hello World App
 title: Hello World App Part 1, C++
-hero: hello-world-app
-image-credit: Toni Rodrigo
-image-credit-link: https://www.flickr.com/photos/tonirodrigo/2482188903/
+hero: hello-world
+image-credit: Travis Wise
+image-credit-link: https://www.flickr.com/photos/photographingtravis/16212948441/
 redirect_from:
   - /your-first-cross-platform-djinni-app-part-1-cplusplus/
 ---
