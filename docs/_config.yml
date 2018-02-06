@@ -9,7 +9,7 @@ theme: jekyll-theme-primer
 
 permalink: /:title.html
 
-gems:
+plugins_dir:
   - jekyll-redirect-from
 
 whitelist:
