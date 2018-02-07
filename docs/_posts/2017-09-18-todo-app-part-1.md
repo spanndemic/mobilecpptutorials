@@ -407,7 +407,7 @@ Also add the sqlite library to your ‘Build Phases’ of your app target.
 
 Now, your xcode project browser should look like the following:
 
-![Todo App C++ Xcode Browser](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-1/todo_app_cpp_xcode_browser.png "Todo App C++ Xcode Browser")
+![Todo App C++ Xcode Browser](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-1/todo_app_cpp_xcode_browser.png "Todo App C++ Xcode Browser")
 
 Our last step is to modify main.cpp to actually test our code. Replace the contents of the file with the following:
 

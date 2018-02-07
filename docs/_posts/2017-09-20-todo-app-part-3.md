@@ -22,7 +22,7 @@ Company Domain: mycompany.com
 
 Project Location: Create a new folder inside your project, here I’ve chosen ‘android_project’ to be consistent with our other Xcode project naming:
 
-![Todo Android Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-3/todo_android_setup.png "Todo Android Setup")
+![Todo Android Setup](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-3/todo_android_setup.png "Todo Android Setup")
 
 *The company name is important here because it is used as the package name throughout this tutorial.*
 
@@ -330,7 +330,7 @@ public class MainActivity extends ListActivity {
 
 Now you should be able to publish the app, and see the working Todo App. Try adding, checking, and deleting things, plus closing and reopening the app to see that the data is persistent. Note: if you delete everything in the list, the next time the app runs it will repopulate with the original five todos.
 
-![Todo Android Complete](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-3/todo_android_complete.png "Todo Android Complete")
+![Todo Android Complete](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-3/todo_android_complete.png "Todo Android Complete")
 
 ## Conclusion
 

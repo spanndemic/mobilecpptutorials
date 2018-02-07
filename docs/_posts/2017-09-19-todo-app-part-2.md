@@ -16,7 +16,7 @@ Create a new workspace with a child project, much like we did in the Hello World
 
 Your project directory structure should now look like the following:
 
-![Todo iOS Folder Structure](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/todo_ios_folder_structure.png "Todo iOS Folder Structure")
+![Todo iOS Folder Structure](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-2/todo_ios_folder_structure.png "Todo iOS Folder Structure")
 
 When we ran the make sqlite command in the previous tutorial, all of the libraries we need should have been built. If for some reason one of the libraries below is missing, you can now generate them by running the make ios command now that we have a workspace set up:
 
@@ -34,7 +34,7 @@ Now in the workspace, and add our library files to the project folder using File
 
 Also add the 3 files to the build phases tab under ‘Link Binary With Libraries’:
 
-![Todo iOS Add Libraries](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/todo_ios_add_libs.png "Todo iOS Add Libraries")
+![Todo iOS Add Libraries](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-2/todo_ios_add_libs.png "Todo iOS Add Libraries")
 
 Next, add the following in Build Settings under ‘User Header Search Paths’ (might need to select ‘Advanced’ to see this setting):
 
@@ -58,7 +58,7 @@ First, let’s create the custom UITableViewCell, since it will be used by the V
 
 Name the class and select UITableViewCell as the parent class:
 
-![Todo iOS UITableCell](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/todo_ios_uitablecell2.png "Todo iOS UITableCell")
+![Todo iOS UITableCell](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-2/todo_ios_uitablecell2.png "Todo iOS UITableCell")
 
 Now replace the contents of the new files with the following:
 
@@ -289,7 +289,7 @@ Add the following to our ViewController.h and ViewController.m files to implemen
 
 Now publish to the simulator or device, and you should get a working Todo App interface.
 
-![Todo iOS Simulator](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/images/todo-app-part-2/ios_simulator.png "Todo iOS Simulator")
+![Todo iOS Simulator](https://github.com/spanndemic/mobilecpptutorials.com/raw/master/docs/assets/images/todo-app-part-2/ios_simulator.png "Todo iOS Simulator")
 
 Next, check out the Android tutorial where we go through the same process for an Android device/simulator.
 
