@@ -1,2 +1,4 @@
 .DS_Store
 _site
+vendor
+docs/_site
