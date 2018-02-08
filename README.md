@@ -12,7 +12,15 @@ even add additional tutorials.
 
 ### Environment Setup
 
-(or [use Docker](docker))
+#### Docker
+
+Install Docker and `docker-compose`, then
+
+```
+docker-compose up --build
+```
+
+#### Local machine
 
 This project utilizes Jekyll for local viewing as described in
 [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/).
