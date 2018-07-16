@@ -61,7 +61,9 @@ Add the following files to your project root directory:
         "./deps/sqlite3.gyp:sqlite3",
       ],
       "sources": [
-        
+        "<!@(python deps/djinni/example/glob.py generated-src/objc  '*.cpp' '*.mm' '*.m')",
+        "<!@(python deps/djinni/example/glob.py generated-src/cpp   '*.cpp')",
+        "<!@(python deps/djinni/example/glob.py src '*.cpp')",
       ],
       "include_dirs": [
         "generated-src/objc",
