@@ -157,6 +157,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mycompany.helloworld.HelloWorld;
+
 public class MainActivity extends AppCompatActivity {
 
     private HelloWorld cppApi;
